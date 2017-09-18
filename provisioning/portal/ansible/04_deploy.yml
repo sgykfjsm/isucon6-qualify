@@ -4,9 +4,9 @@
   become_user: isucon
   tasks:
     - name: mkdir isu6qportal
-      file: path=/home/isucon/isu6qportal owner=isucon group=isucon mode=755 state=directory
+      file: path="/home/isucon/isu6qportal" owner=isucon group=isucon mode=755 state=directory
     - name: upload ./portal
-      copy: src=../../../portal/portal_linux_amd64 dest=/home/isucon/isu6qportal/portal mode=755
+      copy: src="../../../portal/portal_linux_amd64" dest="/home/isucon/isu6qportal/portal" mode=755
 - hosts: all
   gather_facts: no
   become: yes

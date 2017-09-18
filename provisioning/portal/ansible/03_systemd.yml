@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: isu6qportal (systemd)
-      copy: src=../files/isu6qportal.service dest=/etc/systemd/system/isu6qportal.service owner=root mode=644
+      copy: src="../files/isu6qportal.service" dest="/etc/systemd/system/isu6qportal.service" owner=root mode=644
       register: service
     - name: systemctl daemon-reload
       command: systemctl daemon-reload

@@ -4,8 +4,8 @@
   gather_facts: no
   tasks:
     - apt: name=nginx state=present
-    - copy: src=../files/isucon6q.htpasswd dest=/etc/nginx/isucon6q.htpasswd owner=root mode=644
-    - copy: src=../files/nginx.conf dest=/etc/nginx/nginx.conf owner=root mode=644
+    - copy: src="../files/isucon6q.htpasswd" dest="/etc/nginx/isucon6q.htpasswd" owner=root mode=644 force=yes
+    - copy: src="../files/nginx.conf" dest="/etc/nginx/nginx.conf" owner=root mode=644 force=yes
       notify:
         - restart nginx
     - service: name=nginx state=running enabled=true

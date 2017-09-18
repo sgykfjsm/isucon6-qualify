@@ -7,8 +7,8 @@
     - dev
   tasks:
     - git:
-        repo=https://github.com/tagomoris/xbuild.git
-        dest=/home/isucon/.xbuild
+        repo="https://github.com/tagomoris/xbuild.git"
+        dest="/home/isucon/.xbuild"
         update=yes
     # perl
     # - command: /home/isucon/.xbuild/perl-install 5.24.0 /home/isucon/.local/perl
@@ -39,8 +39,8 @@
   tasks:
     - unarchive:
         copy=no
-        src=https://isucon6qimage.example.com/isucon6q/local.tar.gz
-        dest=/home/isucon/
-        creates=/home/isucon/.local
+        src="https://isucon6qimage.example.com/isucon6q/local.tar.gz"
+        dest="/home/isucon/"
+        creates="/home/isucon/.local"
         owner=isucon
         group=isucon

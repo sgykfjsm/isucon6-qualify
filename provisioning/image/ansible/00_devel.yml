@@ -6,7 +6,7 @@
     - always
   tasks:
     - apt: upgrade=safe update_cache=true
-    - apt: name={{item}} state=present install_recommends=no
+    - apt: name="{{item}}" state=present install_recommends=no
       with_items:
         - git
         - curl
