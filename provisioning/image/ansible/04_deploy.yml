@@ -55,8 +55,9 @@
   tags:
     - prod
   tasks:
-    - copy: src="../../../bin/" dest="/home/isucon/bin" owner=isucon group=isucon mode=755
-    - copy: src="../files/env.sh" dest="/home/isucon/env.sh" owner=isucon group=isucon mode=755
+    - copy: src="../../../bin/" dest="/home/isucon/bin" owner=isucon group=isucon mode=755 force=yes
+    - copy: src="../files/env.sh" dest="/home/isucon/env.sh" owner=isucon group=isucon mode=755 force=yes
+    - copy: src="../files/env.sh" dest="/etc/profile.d/isucon.sh" owner=root group=root mode=755 force=yes
     - unarchive:
         copy=no
         src="https://isucon6qimage.example.com/isucon6q/webapp.tar.gz"
@@ -72,7 +73,7 @@
     - always
   tasks:
     - name: isupam (systemd)
-      copy: src="../files/isupam.service dest=/etc/systemd/system/isupam.service owner=root mode=644"
+      copy: src="../files/isupam.service" dest="/etc/systemd/system/isupam.service" owner=root mode=644 force=yes
     # - name: perl isuda (systemd)
     #   copy: src=../files/isuda.perl.service dest=/etc/systemd/system/isuda.perl.service owner=root mode=644
     # - name: perl isutar (systemd)
@@ -90,9 +91,9 @@
     # - name: python isutar (systemd)
     #   copy: src=../files/isutar.python.service dest=/etc/systemd/system/isutar.python.service owner=root mode=644
     - name: go isuda (systemd)
-      copy: src="../files/isuda.go.service" dest="/etc/systemd/system/isuda.go.service" owner=root mode=644
+      copy: src="../files/isuda.go.service" dest="/etc/systemd/system/isuda.go.service" owner=root mode=644 force=yes
     - name: go isutar (systemd)
-      copy: src="../files/isutar.go.service" dest="/etc/systemd/system/isutar.go.service" owner=root mode=644
+      copy: src="../files/isutar.go.service" dest="/etc/systemd/system/isutar.go.service" owner=root mode=644 force=yes
     # - name: scala isuda (systemd)
     #   copy: src=../files/isuda.scala.service dest=/etc/systemd/system/isuda.scala.service owner=root mode=644
     # - name: scala isutar (systemd)
