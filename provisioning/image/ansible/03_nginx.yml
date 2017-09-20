@@ -6,8 +6,6 @@
     - always
   tasks:
     - apt: name=nginx state=present
-    - copy: src="../files/nginx.php.conf" dest="/etc/nginx/nginx.php.conf" owner=root mode=644 force=yes
-    - copy: src="../files/fastcgi_params" dest="/etc/nginx/fastcgi_params" owner=root mode=644 force=yes
     - copy: src="../files/nginx.conf" dest="/etc/nginx/nginx.conf" owner=root mode=644 force=yes
       notify:
         - restart nginx

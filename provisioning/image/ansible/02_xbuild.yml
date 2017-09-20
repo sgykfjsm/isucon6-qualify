@@ -12,9 +12,9 @@
         update=yes
         depth=1
     # perl
-    # - command: /home/isucon/.xbuild/perl-install 5.24.0 /home/isucon/.local/perl
-    #   args:
-    #     creates: /home/isucon/.local/perl/bin/perl
+    - command: /home/isucon/.xbuild/perl-install 5.24.0 /home/isucon/.local/perl
+      args:
+        creates: /home/isucon/.local/perl/bin/perl
     # ruby
     # - command: /home/isucon/.xbuild/ruby-install 2.3.1 /home/isucon/.local/ruby
     #   args:
